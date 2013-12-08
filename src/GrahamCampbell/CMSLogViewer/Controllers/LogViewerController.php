@@ -61,9 +61,8 @@ class LogViewerController extends BaseController {
 
         $today = Carbon::today()->format('Y-m-d');
 
-        $dirs = Config::get('logviewer::log_dirs');
+        $dirs = Config::get('cms-logviewer::log_dirs');
         reset($dirs);
-
         $path = key($dirs);
 
         if (Session::has('success') || Session::has('error')) {

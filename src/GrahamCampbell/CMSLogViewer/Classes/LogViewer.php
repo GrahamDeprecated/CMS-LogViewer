@@ -36,11 +36,10 @@ class LogViewer {
     /**
      * Create a new LogViewer.
      * 
-     * @access public
-     * @param string
-     * @param string
-     * @param string
-     * @param string
+     * @param  string  $app
+     * @param  string  $sapi
+     * @param  string  $date
+     * @param  string  $level
      */
     public function __construct($app, $sapi, $date, $level = 'all') {
         $log_dirs = Config::get('cms-logviewer::log_dirs');
@@ -53,8 +52,7 @@ class LogViewer {
     /**
      * Check if the log is empty.
      * 
-     * @access public
-     * @return boolean
+     * @return bool
      */
     public function isEmpty() {
         return $this->empty;
@@ -63,7 +61,6 @@ class LogViewer {
     /**
      * Open and parse the log.
      * 
-     * @access public
      * @return array
      */
     public function log() {
@@ -112,8 +109,7 @@ class LogViewer {
     /**
      * Delete the log.
      * 
-     * @access public
-     * @return boolean
+     * @return bool
      */
     public function delete() {
         $log_file = glob($this->path.'/log-'.$this->sapi.'*-'.$this->date.'.txt');
@@ -126,7 +122,6 @@ class LogViewer {
     /**
      * Get the log levels from psr/log.
      * 
-     * @access public
      * @return array
      */
     public function getLevels() {
