@@ -26,6 +26,8 @@ $filters['before'][] = 'logviewer.messages';
 Route::group(array('before' => $filters['before'], 'after' => $filters['after']), function () {
     Route::get('logviewer', array('as' => 'logviewer.index', 'uses' => 'GrahamCampbell\LogViewer\Controllers\LogViewerController@getIndex'));
 
+    $filters = array('before' => array(), 'after' => array());
+
     Route::group(array('before' => $filters['before'], 'after' => $filters['after']), function () {
         Route::get('logviewer/{path}/{sapi}/{date}/delete', array('as' => 'logviewer.delete', 'uses' => 'GrahamCampbell\LogViewer\Controllers\LogViewerController@getDelete'));
     });
