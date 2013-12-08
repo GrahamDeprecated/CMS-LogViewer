@@ -24,17 +24,17 @@ $filters = array('before' => array(), 'after' => array());
 $filters['before'][] = 'logviewer.messages';
 
 Route::group(array('before' => $filters['before'], 'after' => $filters['after']), function () {
-    Route::get('logviewer', array('as' => 'logviewer.index', 'uses' => 'GrahamCampbell\LogViewer\Controllers\LogViewerController@getIndex'));
+    Route::get('logviewer', array('as' => 'logviewer.index', 'uses' => 'GrahamCampbell\CMSLogViewer\Controllers\LogViewerController@getIndex'));
 
     $filters = array('before' => array(), 'after' => array());
 
     Route::group(array('before' => $filters['before'], 'after' => $filters['after']), function () {
-        Route::get('logviewer/{path}/{sapi}/{date}/delete', array('as' => 'logviewer.delete', 'uses' => 'GrahamCampbell\LogViewer\Controllers\LogViewerController@getDelete'));
+        Route::get('logviewer/{path}/{sapi}/{date}/delete', array('as' => 'logviewer.delete', 'uses' => 'GrahamCampbell\CMSLogViewer\Controllers\LogViewerController@getDelete'));
     });
 
     $filters['before'][] = 'logviewer.logs';
 
     Route::group(array('before' => $filters['before'], 'after' => $filters['after']), function () {
-        Route::get('logviewer/{path}/{sapi}/{date}/{level?}', array('as' => 'logviewer.show', 'uses' => 'GrahamCampbell\LogViewer\Controllers\LogViewerController@getShow'));
+        Route::get('logviewer/{path}/{sapi}/{date}/{level?}', array('as' => 'logviewer.show', 'uses' => 'GrahamCampbell\CMSLogViewer\Controllers\LogViewerController@getShow'));
     });
 });
