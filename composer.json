@@ -1,7 +1,7 @@
 {
     "name": "graham-campbell/cms-logviewer",
     "description": "CMS LogViewer Is A Bootstrap CMS Plugin That Adds A LogViewer Admin Module",
-    "keywords": ["laravel", "framework", "cms logviewer", "cms", "logviewer api", "LogViewer", "CMS LogViewer", "CMS-LogViewer", "Graham Campbell", "GrahamCampbell"],
+    "keywords": ["laravel", "framework", "cms logviewer", "cms", "log viewer", "LogViewer", "CMS LogViewer", "CMS-LogViewer", "Graham Campbell", "GrahamCampbell"],
     "license": "GNU Affero General Public License v3",
     "authors": [
         {
