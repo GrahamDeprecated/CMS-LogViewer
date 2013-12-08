@@ -12,7 +12,7 @@ CMS LogViewer
 
 ## What Is CMS LogViewer?
 
-CMS LogViewer is a [Bootstrap CMS](https://github.com/GrahamCampbell/Boostrap-CMS) plugin that adds a LogViewer admin module.  
+CMS LogViewer is a [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-CMS) plugin that adds a LogViewer admin module.  
 
 * CMS LogViewer was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).  
 * CMS LogViewer is heavily based on Mike Mand's [LogViewer](https://github.com/mikemand/logviewer).  
