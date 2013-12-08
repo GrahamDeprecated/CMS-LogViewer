@@ -120,7 +120,7 @@ class LogViewerController extends BaseController {
             'sapi'       => $sapis[$sapi],
             'sapi_plain' => $sapi,
             'url'        => 'logviewer',
-            'data_url'   => URL::route('logviewer.index').'/'.$path.'/'.$sapi.'/'.$date.'/'.$level.'?page='.$page,
+            'data_url'   => URL::route('logviewer.index').'/data/'.$path.'/'.$sapi.'/'.$date.'/'.$level.'?page='.$page,
             'levels'     => $levels,
             'current'    => $level,
             'path'       => $path

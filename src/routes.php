@@ -39,6 +39,6 @@ Route::group(array('before' => $filters['before'], 'after' => $filters['after'])
     });
 
     Route::group(array('before' => $filters['before'], 'after' => $filters['after']), function () {
-        Route::get('logviewer/{path}/{sapi}/{date}/{level?}', array('as' => 'logviewer.data', 'uses' => 'GrahamCampbell\CMSLogViewer\Controllers\LogViewerController@getData'));
+        Route::get('logviewer/data/{path}/{sapi}/{date}/{level?}', array('as' => 'logviewer.data', 'uses' => 'GrahamCampbell\CMSLogViewer\Controllers\LogViewerController@getData'));
     });
 });
