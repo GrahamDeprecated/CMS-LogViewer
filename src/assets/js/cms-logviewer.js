@@ -1,5 +1,10 @@
 $(document).ready(function() {
-    $('div[id^="collapse-"]').collapse('show');
+    var cmsLogViewerCollapse = $('div[id^="collapse-"]');
+    cmsLogViewerCollapse.on('shown.bs.collapse', function () {
+      cmsLogViewerCollapse.removeClass();
+    })
+    cmsLogViewerCollapse.collapse('show');
+
     $.ajax({
         url: cmsLogViewerURL,
         type: "GET",

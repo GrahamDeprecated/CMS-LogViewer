@@ -144,6 +144,7 @@ class LogViewerController extends BaseController {
         $logviewer = new LogViewer($path, $sapi, $date, $level);
         $log = $logviewer->log();
         $page = Paginator::make($log, count($log), Config::get('cms-logviewer::per_page', 20));
+        $page->setBaseUrl('logviewer/'.$path.'/'.$sapi.'/'.$date.'/'.$level);
 
         $sapis = array(
             'apache' => 'Apache',
