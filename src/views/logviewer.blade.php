@@ -140,7 +140,7 @@ LogViewer
                 <p>Are you sure you wish to continue?</p>
             </div>
             <div class="modal-footer">
-                {{ HTML::link($url . '/' . $path . '/' . $sapi_plain . '/' . $date . '/delete', 'Yes'), array('class' => 'btn btn-success')) }}
+                {{ HTML::link($url.'/'.$path.'/'.$sapi_plain.'/'.$date.'/delete', 'Yes', array('class' => 'btn btn-success')) }}
                 <button class="btn btn-danger" data-dismiss="modal">No</button>
             </div>
         </div>
