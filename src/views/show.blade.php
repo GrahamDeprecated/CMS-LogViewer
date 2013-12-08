@@ -31,9 +31,7 @@ LogViewer
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{ lcfirst($files['sapi']) }}">
                                     {{ ($count > 1 ? $app . ' - ' . $files['sapi'] : $files['sapi']) }}
-                                    </a>
                                 </h4>
                             </div>
                             <div id="collapse-{{ lcfirst($files['sapi']) }}" class="panel-collapse collapse">
