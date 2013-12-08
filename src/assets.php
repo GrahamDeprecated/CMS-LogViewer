@@ -23,3 +23,7 @@
 Asset::registerStyles(array(
     'graham-campbell/cms-logviewer/src/assets/css/cms-logviewer.css'
 ), '', 'logviewer');
+
+Asset::registerScripts(array(
+    'graham-campbell/cms-logviewer/src/assets/js/cms-logviewer.js'
+), '', 'logviewer');

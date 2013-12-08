@@ -149,7 +149,9 @@ LogViewer
 @stop
 
 @section('css')
-    @section('css')
-    {{ Asset::styles('logviewer') }}
-    @endsection
-@stop
+{{ Asset::styles('logviewer') }}
+@endsection
+
+@section('js')
+{{ Asset::scripts('logviewer') }}
+@endsection
