@@ -57,72 +57,9 @@ LogViewer
         @endif
         </div>
         <div class="col-lg-9">
-            <div class="{{ ! $has_messages ? ' hidden' : '' }}">
-                <div class="col-lg-12" id="messages">
-                    @if (Session::has('success'))
-                        <div class="alert alert-success">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            {{ Session::get('success') }}
-                        </div>
-                    @endif
-                    @if (Session::has('error'))
-                        <div class="alert alert-error">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            {{ Session::get('error') }}
-                        </div>
-                    @endif
-                    @if (Session::has('info'))
-                        <div class="alert alert-info">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            {{ Session::get('info') }}
-                        </div>
-                    @endif
-                </div>
-            </div>
             <div class="row">
-                <div class="col-lg-12">
-                    {{ $paginator->links() }}
-                    <div id="log" class="well">
-                        @if(!$empty && !empty($log))
-                            <?php $c = 1; ?>
-                            @foreach($log as $l)
-                                <div class="alert">
-                                    <div class="panel-group" id="accordion">
-                                        <div class="panel panel-default">
-                                            <div class="log log-{{ $l['level'] }}">
-                                                <h4 class="panel-title">
-                                                    @if($l['stack'] !== "\n")
-                                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{ $c }}" >
-                                                    @endif
-                                                    {{ $l['header'] }}
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                            @if($l['stack'] !== "\n")
-                                            <div id="collapse-{{ $c }}" class="panel-collapse collapse">
-                                                <div class="panel-body">
-                                                    <pre>
-                                                        {{ $l['stack'] }}
-                                                    </pre>
-                                                </div>
-                                            </div>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                                <?php $c++; ?>
-                            @endforeach
-                        @elseif(!$empty && empty($log))
-                            <div class="alert alert-info">
-                                That log appears to be empty.
-                            </div>
-                        @else
-                            <div class="alert alert-info">
-                                That log doesn't exist.
-                            </div>
-                        @endif
-                    </div>
-                    {{ $paginator->links() }}
+                <div class="col-lg-12" id="data">
+                    <p class="lead"><i class="fa fa-refresh fa-spin fa-lg"></i> Loading...</p>
                 </div>
             </div>
         </div>
@@ -153,5 +90,8 @@ LogViewer
 @endsection
 
 @section('js')
+<script>
+var cmsLogViewerURL = '{{ $data_url }}';
+</script>
 {{ Asset::scripts('logviewer') }}
 @endsection

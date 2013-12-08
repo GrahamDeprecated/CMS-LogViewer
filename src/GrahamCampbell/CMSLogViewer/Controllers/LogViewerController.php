@@ -26,7 +26,9 @@ use Illuminate\Support\Facades\Paginator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Pagination\Environment;
+use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\CMSLogViewer\Classes\LogViewer;
 use GrahamCampbell\CMSCore\Controllers\BaseController;
 
@@ -89,7 +91,7 @@ class LogViewerController extends BaseController {
     }
 
     /**
-     * Show the log.
+     * Show the log viewing page.
      *
      * @return \Illuminate\Http\Response
      */
@@ -98,9 +100,47 @@ class LogViewerController extends BaseController {
             $level = 'all';
         }
 
+        $page = Binput::get('page');
+        if (is_null($page) || empty($page)) {
+            $page = '1';
+        }
+
+        $logviewer = new LogViewer($path, $sapi, $date, $level);
+        $levels = $logviewer->getLevels();
+
+        $sapis = array(
+            'apache' => 'Apache',
+            'cgi-fcgi' => 'Fast CGI',
+            'fpm-fcgi' => 'Nginx',
+            'cli' => 'CLI'
+        );
+
+        $data = array(
+            'date'       => $date,
+            'sapi'       => $sapis[$sapi],
+            'sapi_plain' => $sapi,
+            'url'        => 'logviewer',
+            'data_url'   => URL::route('logviewer.index').'/'.$path.'/'.$sapi.'/'.$date.'/'.$level.'?page='.$page,
+            'levels'     => $levels,
+            'current'    => $level,
+            'path'       => $path
+        );
+
+        return $this->viewMake('cms-logviewer::show', $data, true);
+    }
+
+    /**
+     * Show the log contents.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getData($path, $sapi, $date, $level = null) {
+        if (is_null($level) || !is_string($level)) {
+            $level = 'all';
+        }
+
         $logviewer = new LogViewer($path, $sapi, $date, $level);
         $log = $logviewer->log();
-        $levels = $logviewer->getLevels();
         $page = Paginator::make($log, count($log), Config::get('cms-logviewer::per_page', 20));
 
         $sapis = array(
@@ -113,16 +153,9 @@ class LogViewerController extends BaseController {
         $data = array(
             'paginator'  => $page,
             'log'        => (count($log) > $page->getPerPage() ? array_slice($log, $page->getFrom()-1, $page->getPerPage()) : $log),
-            'empty'      => $logviewer->isEmpty(),
-            'date'       => $date,
-            'sapi'       => $sapis[$sapi],
-            'sapi_plain' => $sapi,
-            'url'        => 'logviewer',
-            'levels'     => $levels,
-            'current'    => $level,
-            'path'       => $path
+            'empty'      => $logviewer->isEmpty()
         );
 
-        return $this->viewMake('cms-logviewer::logviewer', $data, true);
+        return $this->viewMake('cms-logviewer::data', $data, true);
     }
 }
