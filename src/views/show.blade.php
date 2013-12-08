@@ -13,11 +13,9 @@ LogViewer
                 @foreach ($levels as $level)
                     <li class="{{ $current === $level ? 'active' : '' }}"><a href="{{ Request::root() }}/{{ $url.'/'.$path.'/'.$sapi_plain.'/'.$date.'/'.$level }}">{{ ucfirst($level) }}</a></li>
                 @endforeach
-                @if(!$empty)
                 <li class="pull-right">
                     <button data-toggle="modal" data-target="#delete_modal" id="btn-delete" type="button" class="btn btn-danger">Delete current log</button>
                 </li>
-                @endif
             </ul>
         </div>
     </div>
