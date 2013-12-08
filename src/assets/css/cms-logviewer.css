@@ -1,6 +1,5 @@
 .log {
     padding:10px;
-    line-height:normal;
 }
 
 .log-emergency {
@@ -11,6 +10,7 @@
 
 .log-emergency h4 {
     color: #a74240;
+    line-height:1.5;
 }
 
 .log-alert {
@@ -21,6 +21,7 @@
 
 .log-alert h4 {
     color: #a74240;
+    line-height:1.5;
 }
 
 .log-critical {
@@ -31,6 +32,7 @@
 
 .log-critical h4 {
     color: #a74240;
+    line-height:1.5;
 }
 
 .log-error {
@@ -41,6 +43,7 @@
 
 .log-error h4 {
     color: #b94a48;
+    line-height:1.5;
 }
 
 .log-warning {
@@ -51,6 +54,7 @@
 
 .log-warning h4 {
     color: #b78c43;
+    line-height:1.5;
 }
 
 .log-notice {
@@ -61,6 +65,7 @@
 
 .log-notice h4 {
     color: #c09853;
+    line-height:1.5;
 }
 
 .log-info {
@@ -71,6 +76,7 @@
 
 .log-info h4 {
     color: #3a87ad;
+    line-height:1.5;
 }
 
 .log-debug {
@@ -81,6 +87,7 @@
 
 .log-debug h4 {
     color: #4196bf;
+    line-height:1.5;
 }
 
 .pagination {

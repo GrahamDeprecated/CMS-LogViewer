@@ -23,7 +23,7 @@ LogViewer
     </div>
     <br>
     <div class="row">
-        <div class="col-lg-2">
+        <div class="col-lg-3">
         @if($logs)
         <div class="panel-group" id="accordion">
             @foreach ($logs as $type => $files)
@@ -56,7 +56,7 @@ LogViewer
         </div>
         @endif
         </div>
-        <div class="col-lg-10">
+        <div class="col-lg-9">
             <div class="{{ ! $has_messages ? ' hidden' : '' }}">
                 <div class="col-lg-12" id="messages">
                     @if (Session::has('success'))
