@@ -9,13 +9,13 @@ LogViewer
     <div class="row">
         <div class="col-lg-12">
             <ul class="nav nav-pills">
-                <li class="{{ Request::segment(6) === null || Request::segment(6) === 'all' ? 'active' : ''}}"><a href="{{ Request::root() }}/{{ $url . '/' . $path . '/' . $sapi_plain . '/' . $date . '/all' }}">All</a></li>
+                <li class="{{ $current === null || $current === 'all' ? 'active' : ''}}"><a href="{{ Request::root() }}/{{ $url.'/'.$path.'/'.$sapi_plain.'/'.$date.'/all' }}">All</a></li>
                 @foreach ($levels as $level)
-                    <li class="{{ Request::segment(6) === $level ? 'active' : '' }}"><a href="{{ Request::root() }}/{{ $url . '/' . $path . '/' . $sapi_plain . '/' . $date . '/' . $level }}">{{ ucfirst($level) }}</a></li>
+                    <li class="{{ $current === $level ? 'active' : '' }}"><a href="{{ Request::root() }}/{{ $url.'/'.$path.'/'.$sapi_plain.'/'.$date.'/'.$level }}">{{ ucfirst($level) }}</a></li>
                 @endforeach
                 @if(!$empty)
                 <li class="pull-right">
-                    <button data-toggle="modal" data-target="#confirm-modal" id="btn-delete" type="button" class="btn btn-danger">Delete current log</button>
+                    <button data-toggle="modal" data-target="#delete-modal" id="btn-delete" type="button" class="btn btn-danger">Delete current log</button>
                 </li>
                 @endif
             </ul>

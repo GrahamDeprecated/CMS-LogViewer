@@ -1,5 +1,26 @@
 .log {
     padding:10px;
+    line-height:normal;
+}
+
+.log-emergency {
+    background-color: #ebcccc;
+    border-color: #e6c1c7;
+    color: #a74240;
+}
+
+.log-emergency h4 {
+    color: #a74240;
+}
+
+.log-alert {
+    background-color: #ebcccc;
+    border-color: #e6c1c7;
+    color: #a74240;
+}
+
+.log-alert h4 {
+    color: #a74240;
 }
 
 .log-critical {
@@ -7,14 +28,17 @@
     border-color: #e6c1c7;
     color: #a74240;
 }
+
 .log-critical h4 {
     color: #a74240;
 }
+
 .log-error {
     background-color: #f2dede;
     border-color: #eed3d7;
     color: #b94a48;
 }
+
 .log-error h4 {
     color: #b94a48;
 }

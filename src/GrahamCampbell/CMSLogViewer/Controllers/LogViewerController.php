@@ -119,9 +119,10 @@ class LogViewerController extends BaseController {
             'sapi_plain' => $sapi,
             'url'        => 'logviewer',
             'levels'     => $levels,
+            'current'    => $level,
             'path'       => $path
         );
 
-        return $this->viewMake('cms-logviewer::logviewer', $data);
+        return $this->viewMake('cms-logviewer::logviewer', $data, true);
     }
 }
