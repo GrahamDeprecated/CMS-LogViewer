@@ -135,6 +135,8 @@ class LogViewerController extends BaseController {
      * @return \Illuminate\Http\Response
      */
     public function getData($path, $sapi, $date, $level = null) {
+        $this->checkAjax();
+
         if (is_null($level) || !is_string($level)) {
             $level = 'all';
         }
