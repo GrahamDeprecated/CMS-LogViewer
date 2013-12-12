@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.4.7",
-        "graham-campbell/cms-core": "dev-master",
+        "graham-campbell/cms-core": "0.1.*",
         "symfony/finder": "2.3.*|2.4.*",
         "psr/log": "~1.0"
     },
