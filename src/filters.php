@@ -20,7 +20,7 @@
  * @link       https://github.com/GrahamCampbell/CMS-LogViewer
  */
 
-Route::filter('logviewer.logs', function() {
+Route::filter('logviewer.logs', function () {
     $logs = array();
     $sapis = array(
         'apache' => 'Apache',
@@ -52,7 +52,7 @@ Route::filter('logviewer.logs', function() {
     View::share('logs', $logs);
 });
 
-Route::filter('logviewer.messages', function() {
+Route::filter('logviewer.messages', function () {
     if (Session::has('success') OR Session::has('error') OR Session::has('info')) {
         View::share('has_messages', true);
     } else {

@@ -20,7 +20,7 @@
  * @link       https://github.com/GrahamCampbell/CMS-LogViewer
  */
 
-HTML::macro('nav_item', function($url, $text, $a_attr = array(), $active_class = 'active', $li_attrs = array()) {
+HTML::macro('nav_item', function ($url, $text, $a_attr = array(), $active_class = 'active', $li_attrs = array()) {
     $href = HTML::link($url, $text, $a_attr);
     $response = '';
     
