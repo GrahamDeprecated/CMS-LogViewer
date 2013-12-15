@@ -35,7 +35,7 @@ Route::filter('logviewer.logs', function () {
         $files = array();
         
         foreach ($dirs as $app => $dir) {
-            $files[$app] = glob($dir . '/log-' . $sapi . '*', GLOB_BRACE);
+            $files[$app] = glob($dir.'/log-'.$sapi.'*', GLOB_BRACE);
             if (is_array($files[$app])) {
                 $files[$app] = array_reverse($files[$app]);
                 foreach ($files[$app] as &$file) {
