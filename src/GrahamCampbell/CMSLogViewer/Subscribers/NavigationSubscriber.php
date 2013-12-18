@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\CMSLogViewer\Subscribers;
+<?php
 
 /**
  * This file is part of CMS LogViewer by Graham Campbell.
@@ -12,18 +12,23 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
- *
- * @package    CMS-LogViewer
- * @author     Graham Campbell
- * @license    GNU AFFERO GENERAL PUBLIC LICENSE
- * @copyright  Copyright (C) 2013  Graham Campbell
- * @link       https://github.com/GrahamCampbell/CMS-LogViewer
  */
+
+namespace GrahamCampbell\CMSLogViewer\Subscribers;
 
 use Cartalyst\Sentry\Facades\Laravel\Sentry;
 use GrahamCampbell\CMSCore\Facades\PageProvider;
 use GrahamCampbell\Navigation\Facades\Navigation;
 
+/**
+ * This is the navigation subscriber class.
+ *
+ * @package    CMS-LogViewer
+ * @author     Graham Campbell
+ * @copyright  Copyright (C) 2013  Graham Campbell
+ * @license    https://github.com/GrahamCampbell/CMS-LogViewer/blob/develop/LICENSE.md
+ * @link       https://github.com/GrahamCampbell/CMS-LogViewer
+ */
 class NavigationSubscriber
 {
 

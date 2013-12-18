@@ -12,12 +12,6 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
- *
- * @package    CMS-LogViewer
- * @author     Graham Campbell
- * @license    GNU AFFERO GENERAL PUBLIC LICENSE
- * @copyright  Copyright (C) 2013  Graham Campbell
- * @link       https://github.com/GrahamCampbell/CMS-LogViewer
  */
 
 Route::filter('logviewer.logs', function () {
@@ -33,7 +27,7 @@ Route::filter('logviewer.logs', function () {
         $logs[$sapi]['sapi'] = $human;
         $dirs = Config::get('cms-logviewer::log_dirs');
         $files = array();
-        
+
         foreach ($dirs as $app => $dir) {
             $files[$app] = glob($dir.'/log-'.$sapi.'*', GLOB_BRACE);
             if (is_array($files[$app])) {
@@ -45,10 +39,10 @@ Route::filter('logviewer.logs', function () {
                 $files[$app] = array();
             }
         }
-        
+
         $logs[$sapi]['logs'] = $files;
     }
-    
+
     View::share('logs', $logs);
 });
 
