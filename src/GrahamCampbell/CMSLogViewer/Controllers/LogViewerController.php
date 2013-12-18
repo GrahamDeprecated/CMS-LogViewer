@@ -32,14 +32,15 @@ use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\CMSLogViewer\Classes\LogViewer;
 use GrahamCampbell\CMSCore\Controllers\BaseController;
 
-class LogViewerController extends BaseController {
-
+class LogViewerController extends BaseController
+{
     /**
      * Constructor (setup access permissions).
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->setPermissions(array(
             'getIndex'  => 'admin',
             'getDelete' => 'admin',
@@ -54,7 +55,8 @@ class LogViewerController extends BaseController {
      *
      * @return \Illuminate\Http\Response
      */
-    public function getIndex() {
+    public function getIndex()
+    {
         $sapi = php_sapi_name();
 
         if (preg_match('/apache.*/', $sapi)) {
@@ -79,7 +81,8 @@ class LogViewerController extends BaseController {
      *
      * @return \Illuminate\Http\Response
      */
-    public function getDelete($path, $sapi, $date) {
+    public function getDelete($path, $sapi, $date)
+    {
         $logviewer = new LogViewer($path, $sapi, $date);
 
         if ($logviewer->delete()) {
@@ -95,7 +98,8 @@ class LogViewerController extends BaseController {
      *
      * @return \Illuminate\Http\Response
      */
-    public function getShow($path, $sapi, $date, $level = null) {
+    public function getShow($path, $sapi, $date, $level = null)
+    {
         if (is_null($level) || !is_string($level)) {
             $level = 'all';
         }
@@ -134,7 +138,8 @@ class LogViewerController extends BaseController {
      *
      * @return \Illuminate\Http\Response
      */
-    public function getData($path, $sapi, $date, $level = null) {
+    public function getData($path, $sapi, $date, $level = null)
+    {
         $this->checkAjax();
 
         if (is_null($level) || !is_string($level)) {

@@ -22,8 +22,8 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class CMSLogViewerServiceProvider extends ServiceProvider {
-
+class CMSLogViewerServiceProvider extends ServiceProvider
+{
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -36,7 +36,8 @@ class CMSLogViewerServiceProvider extends ServiceProvider {
      *
      * @return void
      */
-    public function boot() {
+    public function boot()
+    {
         $this->package('graham-campbell/cms-logviewer');
 
         include __DIR__.'/../../routes.php';
@@ -51,7 +52,8 @@ class CMSLogViewerServiceProvider extends ServiceProvider {
      *
      * @return void
      */
-    public function register() {
+    public function register()
+    {
         //
     }
 
@@ -60,7 +62,8 @@ class CMSLogViewerServiceProvider extends ServiceProvider {
      *
      * @return array
      */
-    public function provides() {
+    public function provides()
+    {
         return array();
     }
 }
