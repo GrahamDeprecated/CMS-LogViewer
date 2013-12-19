@@ -58,8 +58,9 @@ Once CMS LogViewer is installed, you need to register the service provider. Open
 
 ## Usage
 
-There is currently no usage documentation besides the [API Documentation](http://grahamcampbell.github.io/CMS-LogViewer
-) for CMS LogViewer.  
+There is currently no usage documentation besides the [API Documentation](http://grahamcampbell.github.io/CMS-LogViewer) for CMS LogViewer.  
+
+Note that [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-CMS) already ships with CMS LogViewer.  
 
 
 ## Updating Your Fork
