@@ -12,18 +12,34 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
- *
- * @package    CMS-LogViewer
- * @author     Graham Campbell
- * @license    GNU AFFERO GENERAL PUBLIC LICENSE
- * @copyright  Copyright (C) 2013  Graham Campbell
- * @link       https://github.com/GrahamCampbell/CMS-LogViewer
  */
 
 return array(
 
+    /*
+    |--------------------------------------------------------------------------
+    | Log Directories
+    |--------------------------------------------------------------------------
+    |
+    | This defines the paths to the log directories.
+    |
+    | Default to array('app' => storage_path().'/logs').
+    |
+    */
+
     'log_dirs' => array('app' => storage_path().'/logs'),
 
-    'per_page' => 20,
+    /*
+    |--------------------------------------------------------------------------
+    | Logs Per Page
+    |--------------------------------------------------------------------------
+    |
+    | This defines how many log entries are displayed derp page.
+    |
+    | Default to 20.
+    |
+    */
+
+    'per_page' => 20
 
 );

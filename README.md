@@ -3,31 +3,31 @@ CMS LogViewer
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/GrahamCampbell/CMS-LogViewer/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-[![Build Status](https://travis-ci.org/GrahamCampbell/CMS-LogViewer.png?branch=master)](https://travis-ci.org/GrahamCampbell/CMS-LogViewer)
-[![Latest Version](https://poser.pugx.org/graham-campbell/cms-logviewer/v/stable.png)](https://packagist.org/packages/graham-campbell/cms-logviewer)
-[![Total Downloads](https://poser.pugx.org/graham-campbell/cms-logviewer/downloads.png)](https://packagist.org/packages/graham-campbell/cms-logviewer)
+[![Build Status](https://travis-ci.org/GrahamCampbell/CMS-LogViewer.png?branch=develop)](https://travis-ci.org/GrahamCampbell/CMS-LogViewer)
+[![Coverage Status](https://coveralls.io/repos/GrahamCampbell/CMS-LogViewer/badge.png?branch=develop)](https://coveralls.io/r/GrahamCampbell/CMS-LogViewer)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-LogViewer/badges/quality-score.png?s=30a629f55a95e3e0b0d146b242d0e80662abb298)](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-LogViewer)
+[![Latest Version](https://poser.pugx.org/graham-campbell/cms-logviewer/v/stable.png)](https://packagist.org/packages/graham-campbell/cms-logviewer)
 [![Still Maintained](http://stillmaintained.com/GrahamCampbell/CMS-LogViewer.png)](http://stillmaintained.com/GrahamCampbell/CMS-LogViewer)
 
 
 ## What Is CMS LogViewer?
 
-CMS LogViewer is a [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-CMS) plugin that adds a LogViewer admin module.  
+CMS LogViewer is a [CMS Core](https://github.com/GrahamCampbell/CMS-Core) plugin that adds a LogViewer admin module.  
 
 * CMS LogViewer was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).  
 * CMS LogViewer is heavily based on Mike Mand's [LogViewer](https://github.com/mikemand/logviewer).  
 * CMS LogViewer relies on my [CMS Core](https://github.com/GrahamCampbell/CMS-Core) package.  
 * CMS LogViewer uses [Travis CI](https://travis-ci.org/GrahamCampbell/CMS-LogViewer) to run tests to check if it's working as it should.  
-* CMS LogViewer uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-LogViewer) to run additional tests and checks.  
+* CMS LogViewer uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-LogViewer) and [Coveralls](https://coveralls.io/r/GrahamCampbell/CMS-LogViewer) to run additional tests and checks.  
 * CMS LogViewer uses [Composer](https://getcomposer.org) to load and manage dependencies.  
-* CMS LogViewer provides a [change log](https://github.com/GrahamCampbell/CMS-LogViewer/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/CMS-LogViewer/releases), and a [wiki](https://github.com/GrahamCampbell/CMS-LogViewer/wiki).  
-* CMS LogViewer is licensed under the GNU AGPLv3, available [here](https://github.com/GrahamCampbell/CMS-LogViewer/blob/master/LICENSE.md).  
+* CMS LogViewer provides a [change log](https://github.com/GrahamCampbell/CMS-LogViewer/blob/develop/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/CMS-LogViewer/releases), and a [wiki](https://github.com/GrahamCampbell/CMS-LogViewer/wiki).  
+* CMS LogViewer is licensed under the GNU AGPLv3, available [here](https://github.com/GrahamCampbell/CMS-LogViewer/blob/develop/LICENSE.md).  
 
 
 ## System Requirements
 
-* PHP 5.4+ or PHP 5.5+ is required.
-* You will need [Laravel 4](http://laravel.com) because this package is designed for it.  
+* PHP 5.4.7+ or PHP 5.5+ is required.  
+* You will need a [CMS Core](https://github.com/GrahamCampbell/CMS-Core) application like [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-CMS) because this package is designed for it.  
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of CMS-LogViewer.  
 
 
@@ -35,15 +35,32 @@ CMS LogViewer is a [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-C
 
 Please check the system requirements before installing CMS LogViewer.  
 
-To get the latest version of CMS LogViewer, simply require it in your `composer.json` file.
+To get the latest version of CMS LogViewer, simply require it in your `composer.json` file.  
 
-`"graham-campbell/cms-logviewer": "dev-master"`
+`"graham-campbell/cms-logviewer": "dev-master"`  
 
-You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.  
 
-Once CMS LogViewer is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.
+You will need to register many service providers before you attempt to load the CMS LogViewer service provider. Open up `app/config/app.php` and add the following to the `providers` key.  
 
-`'GrahamCampbell\CMSLogViewer\CMSLogViewerServiceProvider'`
+`'GrahamCampbell\Queuing\QueuingServiceProvider'`  
+`'GrahamCampbell\HTMLMin\HTMLMinServiceProvider'`  
+`'GrahamCampbell\Security\SecurityMinServiceProvider'`  
+`'GrahamCampbell\Binput\BinputServiceProvider'`  
+`'GrahamCampbell\Passwd\PasswdServiceProvider'`  
+`'GrahamCampbell\Navigation\NavigationServiceProvider'`  
+`'GrahamCampbell\CMSCore\CMSCoreServiceProvider'`  
+
+Once CMS LogViewer is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.  
+
+`'GrahamCampbell\CMSLogViewer\CMSLogViewerServiceProvider'`  
+
+
+## Usage
+
+There is currently no usage documentation besides the [API Documentation](http://grahamcampbell.github.io/CMS-LogViewer) for CMS LogViewer.  
+
+Note that [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-CMS) already ships with CMS LogViewer.  
 
 
 ## Updating Your Fork
@@ -72,14 +89,14 @@ Please submit pull requests against the develop branch.
 * Any pull requests made against the master branch will be closed immediately.  
 * If you plan to fix a bug, please create a branch called `fix-`, followed by an appropriate name.  
 * If you plan to add a feature, please create a branch called `feature-`, followed by an appropriate name.  
-* Please indent with 4 spaces rather than tabs, and make sure your code is commented.  
+* Please follow the [PSR-2 Coding Style](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) and [PHP-FIG Naming Conventions](https://github.com/php-fig/fig-standards/blob/master/bylaws/002-psr-naming-conventions.md).  
 
 
 ## License
 
 GNU AFFERO GENERAL PUBLIC LICENSE  
 
-CMS LogViewer Is A Bootstrap CMS Plugin That Adds A LogViewer Form Backend  
+CMS LogViewer Is A CMS Core Plugin That Adds A LogViewer Admin Module  
 Copyright (C) 2013  Graham Campbell  
 
 This program is free software: you can redistribute it and/or modify

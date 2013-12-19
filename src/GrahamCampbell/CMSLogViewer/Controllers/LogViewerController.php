@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\CMSLogViewer\Controllers;
+<?php
 
 /**
  * This file is part of CMS LogViewer by Graham Campbell.
@@ -12,13 +12,9 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
- *
- * @package    CMS-LogViewer
- * @author     Graham Campbell
- * @license    GNU AFFERO GENERAL PUBLIC LICENSE
- * @copyright  Copyright (C) 2013  Graham Campbell
- * @link       https://github.com/GrahamCampbell/CMS-LogViewer
  */
+
+namespace GrahamCampbell\CMSLogViewer\Controllers;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
@@ -32,14 +28,24 @@ use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\CMSLogViewer\Classes\LogViewer;
 use GrahamCampbell\CMSCore\Controllers\BaseController;
 
-class LogViewerController extends BaseController {
-
+/**
+ * This is the logviewer controller class.
+ *
+ * @package    CMS-LogViewer
+ * @author     Graham Campbell
+ * @copyright  Copyright (C) 2013  Graham Campbell
+ * @license    https://github.com/GrahamCampbell/CMS-LogViewer/blob/develop/LICENSE.md
+ * @link       https://github.com/GrahamCampbell/CMS-LogViewer
+ */
+class LogViewerController extends BaseController
+{
     /**
      * Constructor (setup access permissions).
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->setPermissions(array(
             'getIndex'  => 'admin',
             'getDelete' => 'admin',
@@ -54,7 +60,8 @@ class LogViewerController extends BaseController {
      *
      * @return \Illuminate\Http\Response
      */
-    public function getIndex() {
+    public function getIndex()
+    {
         $sapi = php_sapi_name();
 
         if (preg_match('/apache.*/', $sapi)) {
@@ -79,7 +86,8 @@ class LogViewerController extends BaseController {
      *
      * @return \Illuminate\Http\Response
      */
-    public function getDelete($path, $sapi, $date) {
+    public function getDelete($path, $sapi, $date)
+    {
         $logviewer = new LogViewer($path, $sapi, $date);
 
         if ($logviewer->delete()) {
@@ -95,7 +103,8 @@ class LogViewerController extends BaseController {
      *
      * @return \Illuminate\Http\Response
      */
-    public function getShow($path, $sapi, $date, $level = null) {
+    public function getShow($path, $sapi, $date, $level = null)
+    {
         if (is_null($level) || !is_string($level)) {
             $level = 'all';
         }
@@ -134,7 +143,8 @@ class LogViewerController extends BaseController {
      *
      * @return \Illuminate\Http\Response
      */
-    public function getData($path, $sapi, $date, $level = null) {
+    public function getData($path, $sapi, $date, $level = null)
+    {
         $this->checkAjax();
 
         if (is_null($level) || !is_string($level)) {

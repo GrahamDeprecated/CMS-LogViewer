@@ -12,12 +12,6 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
- *
- * @package    CMS-LogViewer
- * @author     Graham Campbell
- * @license    GNU AFFERO GENERAL PUBLIC LICENSE
- * @copyright  Copyright (C) 2013  Graham Campbell
- * @link       https://github.com/GrahamCampbell/CMS-LogViewer
  */
 
 use Illuminate\Support\Facades\Config;
@@ -25,8 +19,8 @@ use Illuminate\Support\Facades\File;
 use Psr\Log\LogLevel;
 use ReflectionClass;
 
-class LogViewer {
-    
+class LogViewer
+{    
     public $path;
     public $sapi;
     public $date;
@@ -41,7 +35,8 @@ class LogViewer {
      * @param  string  $date
      * @param  string  $level
      */
-    public function __construct($app, $sapi, $date, $level = 'all') {
+    public function __construct($app, $sapi, $date, $level = 'all')
+    {
         $log_dirs = Config::get('cms-logviewer::log_dirs');
         $this->path = $log_dirs[$app];
         $this->sapi = $sapi;
@@ -54,7 +49,8 @@ class LogViewer {
      * 
      * @return bool
      */
-    public function isEmpty() {
+    public function isEmpty()
+    {
         return $this->empty;
     }
     
@@ -63,7 +59,8 @@ class LogViewer {
      * 
      * @return array
      */
-    public function log() {
+    public function log()
+    {
         $this->empty = true;
         $log = array();
         
@@ -89,7 +86,7 @@ class LogViewer {
                 for ($i=0, $j = count($h); $i < $j; $i++) {
                     foreach ($log_levels as $ll) {
                         if ($this->level == $ll OR $this->level == 'all') {
-                            if (strpos(strtolower($h[$i]), strtolower('.' . $ll))) {
+                            if (strpos(strtolower($h[$i]), strtolower('.'.$ll))) {
                                 $log[] = array('level' => $ll, 'header' => $h[$i], 'stack' => $log_data[$i]);
                             }
                         }
@@ -111,7 +108,8 @@ class LogViewer {
      * 
      * @return bool
      */
-    public function delete() {
+    public function delete()
+    {
         $log_file = glob($this->path.'/log-'.$this->sapi.'*-'.$this->date.'.txt');
         
         if (!empty($log_file)) {
@@ -124,7 +122,8 @@ class LogViewer {
      * 
      * @return array
      */
-    public function getLevels() {
+    public function getLevels()
+    {
         $class = new ReflectionClass(new LogLevel);
         return $constants = $class->getConstants();
     }

@@ -5,13 +5,18 @@ CHANGE LOG
 ## V0.2 Alpha (Upcoming)
 #### Major Release
 
+* Support only laravel 4.1
 * Added unit tests
 
 
-## V0.1.1 Alpha (Upcoming)
+## V0.1.1 Alpha (19/12/2013)
 #### Minor Release
 
-* Minor tweaks
+* Travis and Scrutinizer tweaks
+* Updated doc blocks
+* Coding style fixes
+* Testing preparation
+* Other minor tweaks
 
 
 ## V0.1 Alpha (12/12/2013)

@@ -31,7 +31,7 @@ LogViewer
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    {{ ($count > 1 ? $app . ' - ' . $files['sapi'] : $files['sapi']) }}
+                                    {{ ($count > 1 ? $app.' - '.$files['sapi'] : $files['sapi']) }}
                                 </h4>
                             </div>
                             <div id="collapse-{{ lcfirst($files['sapi']) }}" class="panel-collapse collapse">
@@ -39,7 +39,7 @@ LogViewer
                                     <ul class="nav nav-list">
                                         @foreach ($file as $f)
                                              <li class="list-group-item">
-                                                <a href="{{ Request::root() }}/{{ $url . '/' . $app . '/' . $type . '/' . $f }} ">{{ $f }}</a>
+                                                <a href="{{ Request::root() }}/{{ $url.'/'.$app.'/'.$type.'/'.$f }} ">{{ $f }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
