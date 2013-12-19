@@ -96,7 +96,7 @@ Please submit pull requests against the develop branch.
 
 GNU AFFERO GENERAL PUBLIC LICENSE  
 
-CMS LogViewer Is A Bootstrap CMS Plugin That Adds A LogViewer Form Backend  
+CMS LogViewer Is A CMS Core Plugin That Adds A LogViewer Admin Module  
 Copyright (C) 2013  Graham Campbell  
 
 This program is free software: you can redistribute it and/or modify
