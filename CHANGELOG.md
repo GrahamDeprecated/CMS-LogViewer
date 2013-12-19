@@ -9,12 +9,13 @@ CHANGE LOG
 * Added unit tests
 
 
-## V0.1.1 Alpha (Upcoming)
+## V0.1.1 Alpha (19/12/2013)
 #### Minor Release
 
 * Travis and Scrutinizer tweaks
 * Updated doc blocks
 * Coding style fixes
+* Testing preparation
 * Other minor tweaks
 
 
