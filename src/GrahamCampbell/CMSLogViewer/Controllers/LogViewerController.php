@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\URL;
 use Illuminate\Pagination\Environment;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\CMSLogViewer\Classes\LogViewer;
-use GrahamCampbell\CMSCore\Controllers\BaseController;
+use GrahamCampbell\CMSCore\Controllers\AbstractController;
 
 /**
  * This is the logviewer controller class.
@@ -37,7 +37,7 @@ use GrahamCampbell\CMSCore\Controllers\BaseController;
  * @license    https://github.com/GrahamCampbell/CMS-LogViewer/blob/develop/LICENSE.md
  * @link       https://github.com/GrahamCampbell/CMS-LogViewer
  */
-class LogViewerController extends BaseController
+class LogViewerController extends AbstractController
 {
     /**
      * Constructor (setup access permissions).
