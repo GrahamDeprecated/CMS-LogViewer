@@ -49,6 +49,8 @@ You will need to register many service providers before you attempt to load the 
 `'GrahamCampbell\Security\SecurityMinServiceProvider'`  
 `'GrahamCampbell\Binput\BinputServiceProvider'`  
 `'GrahamCampbell\Passwd\PasswdServiceProvider'`  
+`'Cartalyst\Sentry\SentryServiceProvider'`  
+`'GrahamCampbell\Credentials\CredentialsServiceProvider'`  
 `'GrahamCampbell\Navigation\NavigationServiceProvider'`  
 `'GrahamCampbell\CMSCore\CMSCoreServiceProvider'`  
 
