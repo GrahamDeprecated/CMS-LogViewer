@@ -16,7 +16,7 @@
 
 namespace GrahamCampbell\Tests\CMSLogViewer;
 
-use GrahamCampbell\TestBench\Classes\AbstractTestCase as TestCase;
+use GrahamCampbell\Tests\CMSCore\AbstractTestCase as TestCase;
 
 /**
  * This is the abstract test case class.
@@ -40,23 +40,13 @@ abstract class AbstractTestCase extends TestCase
     }
 
     /**
-     * Get the package service providers.
+     * Get the plugin service providers.
      *
      * @return array
      */
-    protected function getPackageProviders()
+    protected function getPluginProviders()
     {
         return array(
-            'Cartalyst\Sentry\SentryServiceProvider',
-            'Lightgear\Asset\AssetServiceProvider',
-            'GrahamCampbell\Queuing\QueuingServiceProvider',
-            'GrahamCampbell\HTMLMin\HTMLMinServiceProvider',
-            'GrahamCampbell\Markdown\MarkdownServiceProvider',
-            'GrahamCampbell\Security\SecurityServiceProvider',
-            'GrahamCampbell\Binput\BinputServiceProvider',
-            'GrahamCampbell\Passwd\PasswdServiceProvider',
-            'GrahamCampbell\Navigation\NavigationServiceProvider',
-            'GrahamCampbell\CMSCore\CMSCoreServiceProvider',
             'GrahamCampbell\CMSLogViewer\CMSLogViewerServiceProvider'
         );
     }
