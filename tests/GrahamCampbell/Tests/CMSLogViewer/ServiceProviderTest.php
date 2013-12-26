@@ -27,17 +27,7 @@ use GrahamCampbell\TestBench\Traits\ServiceProviderTestCaseTrait;
  * @license    https://github.com/GrahamCampbell/CMS-LogViewer/blob/develop/LICENSE.md
  * @link       https://github.com/GrahamCampbell/CMS-LogViewer
  */
-abstract class ServiceProviderTest extends AbstractTestCase
+class ServiceProviderTest extends AbstractTestCase
 {
     use ServiceProviderTestCaseTrait;
-
-    /**
-     * Get the service provider class.
-     *
-     * @return string
-     */
-    protected function getServiceProviderClass()
-    {
-        return 'GrahamCampbell\CMSLogViewer\CMSLogViewerServiceProvider';
-    }
 }

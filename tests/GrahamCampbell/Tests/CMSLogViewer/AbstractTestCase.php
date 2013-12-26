@@ -40,14 +40,24 @@ abstract class AbstractTestCase extends TestCase
     }
 
     /**
-     * Get the plugin service providers.
+     * Get the required service providers.
      *
      * @return array
      */
-    protected function getPluginProviders()
+    protected function getRequiredServiceProviders()
     {
-        return array(
-            'GrahamCampbell\CMSLogViewer\CMSLogViewerServiceProvider'
-        );
+        return array_merge(parent::getRequiredServiceProviders(), array(
+            'GrahamCampbell\CMSCore\CMSCoreServiceProvider'
+        ));
+    }
+
+    /**
+     * Get the service provider class.
+     *
+     * @return string
+     */
+    protected function getServiceProviderClass()
+    {
+        return 'GrahamCampbell\CMSLogViewer\CMSLogViewerServiceProvider';
     }
 }
