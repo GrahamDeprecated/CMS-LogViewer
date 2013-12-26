@@ -23,8 +23,10 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\View;
 use Illuminate\Pagination\Environment;
 use GrahamCampbell\Binput\Facades\Binput;
+use GrahamCampbell\Viewer\Facades\Viewer;
 use GrahamCampbell\CMSLogViewer\Classes\LogViewer;
 use GrahamCampbell\CMSCore\Controllers\AbstractController;
 
@@ -135,7 +137,7 @@ class LogViewerController extends AbstractController
             'path'       => $path
         );
 
-        return $this->viewMake('cms-logviewer::show', $data, true);
+        return Viewer::make('cms-logviewer::show', $data, 'admin');
     }
 
     /**
@@ -169,6 +171,6 @@ class LogViewerController extends AbstractController
             'empty'      => $logviewer->isEmpty()
         );
 
-        return $this->viewMake('cms-logviewer::data', $data, true);
+        return View::make('cms-logviewer::data', $data);
     }
 }
