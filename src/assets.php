@@ -14,6 +14,8 @@
  * GNU Affero General Public License for more details.
  */
 
+use Lightgear\Asset\Facades\Asset;
+
 Asset::registerStyles(array(
     'graham-campbell/cms-logviewer/src/assets/css/cms-logviewer.css'
 ), '', 'logviewer');
