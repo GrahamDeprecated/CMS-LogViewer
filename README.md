@@ -10,6 +10,11 @@ CMS LogViewer
 [![Still Maintained](http://stillmaintained.com/GrahamCampbell/CMS-LogViewer.png)](http://stillmaintained.com/GrahamCampbell/CMS-LogViewer)
 
 
+## WARNING
+
+#### This package will depreciated soon. The final release will be V0.2 Alpha. It has been replaced by my [Laravel LogViewer](https://github.com/GrahamCampbell/Laravel-LogViewer) package. This package new package will be comparable with all Laravel applications and will include native support for Bootstrap CMS. Note that [CMS Core](https://github.com/GrahamCampbell/CMS-Core) will also be deprecated.
+
+
 ## What Is CMS LogViewer?
 
 CMS LogViewer is a [CMS Core](https://github.com/GrahamCampbell/CMS-Core) plugin that adds a LogViewer admin module.  
