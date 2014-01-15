@@ -42,7 +42,7 @@ Please check the system requirements before installing CMS LogViewer.
 
 To get the latest version of CMS LogViewer, simply require it in your `composer.json` file.  
 
-`"graham-campbell/cms-logviewer": "dev-master"`  
+`"graham-campbell/cms-logviewer": "*"`  
 
 You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.  
 
