@@ -14,12 +14,12 @@
  * GNU Affero General Public License for more details.
  */
 
-namespace GrahamCampbell\CMSLogViewer;
+namespace GrahamCampbell\Tests\CMSLogViewer;
 
-use Illuminate\Support\ServiceProvider;
+use GrahamCampbell\Tests\CMSCore\AbstractTestCase as TestCase;
 
 /**
- * This is the cms logviewer service provider class.
+ * This is the abstract test case class.
  *
  * @package    CMS-LogViewer
  * @author     Graham Campbell
@@ -27,48 +27,37 @@ use Illuminate\Support\ServiceProvider;
  * @license    https://github.com/GrahamCampbell/CMS-LogViewer/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/CMS-LogViewer
  */
-class CMSLogViewerServiceProvider extends ServiceProvider
+abstract class AbstractTestCase extends TestCase
 {
     /**
-     * Indicates if loading of the provider is deferred.
+     * Get the application base path.
      *
-     * @var bool
+     * @return string
      */
-    protected $defer = false;
-
-    /**
-     * Bootstrap the application events.
-     *
-     * @return void
-     */
-    public function boot()
+    protected function getBasePath()
     {
-        $this->package('graham-campbell/cms-logviewer');
-
-        include __DIR__.'/../../routes.php';
-        include __DIR__.'/../../filters.php';
-        include __DIR__.'/../../macros.php';
-        include __DIR__.'/../../listeners.php';
-        include __DIR__.'/../../assets.php';
+        return __DIR__.'/../../../../src';
     }
 
     /**
-     * Register the service provider.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
-
-    /**
-     * Get the services provided by the provider.
+     * Get the required service providers.
      *
      * @return array
      */
-    public function provides()
+    protected function getRequiredServiceProviders()
     {
-        return array();
+        return array_merge(parent::getRequiredServiceProviders(), array(
+            'GrahamCampbell\CMSCore\CMSCoreServiceProvider'
+        ));
+    }
+
+    /**
+     * Get the service provider class.
+     *
+     * @return string
+     */
+    protected function getServiceProviderClass()
+    {
+        return 'GrahamCampbell\CMSLogViewer\CMSLogViewerServiceProvider';
     }
 }

@@ -2,7 +2,7 @@
     "name": "graham-campbell/cms-logviewer",
     "description": "CMS LogViewer Is A CMS Core Plugin That Adds A LogViewer Admin Module",
     "keywords": ["laravel", "framework", "cms logviewer", "cms", "log viewer", "LogViewer", "CMS LogViewer", "CMS-LogViewer", "Graham Campbell", "GrahamCampbell"],
-    "license": "GNU Affero General Public License v3",
+    "license": "AGPL-3.0",
     "authors": [
         {
             "name": "Graham Campbell",
@@ -10,6 +10,14 @@
         }
     ],
     "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/GrahamCampbell/dropbox-sdk-php"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/GrahamCampbell/asset"
+        },
         {
             "type": "package",
             "package": {
@@ -32,27 +40,23 @@
     ],
     "require": {
         "php": ">=5.4.7",
-        "laravel/framework": "4.0.*",
-        "symfony/config": "2.3.*",
-        "symfony/filesystem": "2.3.*",
-        "graham-campbell/cms-core": "0.1.*"
+        "laravel/framework": "4.1.*",
+        "symfony/config": "2.4.*",
+        "symfony/filesystem": "2.4.*",
+        "graham-campbell/cms-core": "0.2.*"
     },
     "require-dev": {
-        "orchestra/testbench": "2.0.*",
-        "mockery/mockery": "0.8.*",
-        "phpunit/phpunit": "3.7.*",
-        "sebastian/finder-facade": "1.1.*",
-        "sebastianbergmann/phpcov": "1.1.0",
-        "satooshi/php-coveralls": "dev-master",
-        "symfony/event-dispatcher": "2.3.*",
-        "symfony/stopwatch": "2.3.*",
-        "symfony/yaml": "2.3.*",
-        "guzzle/guzzle": "3.8.*"
+        "graham-campbell/testbench": "0.2.*"
     },
     "autoload": {
         "psr-0": {
             "GrahamCampbell\\CMSLogViewer\\": "src/",
             "GrahamCampbell\\Tests\\CMSLogViewer": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.2-dev"
         }
     },
     "minimum-stability": "dev",

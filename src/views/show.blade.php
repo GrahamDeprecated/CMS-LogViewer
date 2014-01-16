@@ -4,6 +4,12 @@
 LogViewer
 @stop
 
+@section('top')
+<div class="page-header">
+<h1>LogViewer</h1>
+</div>
+@stop
+
 @section('content')
 <div class="container" id="main-container">
     <div class="row">

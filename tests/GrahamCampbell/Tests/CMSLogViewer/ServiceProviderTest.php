@@ -14,12 +14,20 @@
  * GNU Affero General Public License for more details.
  */
 
-use Lightgear\Asset\Facades\Asset;
+namespace GrahamCampbell\Tests\CMSLogViewer;
 
-Asset::registerStyles(array(
-    'graham-campbell/cms-logviewer/src/assets/css/cms-logviewer.css'
-), '', 'logviewer');
+use GrahamCampbell\TestBench\Traits\ServiceProviderTestCaseTrait;
 
-Asset::registerScripts(array(
-    'graham-campbell/cms-logviewer/src/assets/js/cms-logviewer.js'
-), '', 'logviewer');
+/**
+ * This is the service provider test class.
+ *
+ * @package    CMS-LogViewer
+ * @author     Graham Campbell
+ * @copyright  Copyright (C) 2013-2014  Graham Campbell
+ * @license    https://github.com/GrahamCampbell/CMS-LogViewer/blob/master/LICENSE.md
+ * @link       https://github.com/GrahamCampbell/CMS-LogViewer
+ */
+class ServiceProviderTest extends AbstractTestCase
+{
+    use ServiceProviderTestCaseTrait;
+}

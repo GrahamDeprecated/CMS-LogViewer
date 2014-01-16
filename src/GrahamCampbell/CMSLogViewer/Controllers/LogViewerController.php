@@ -23,21 +23,23 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\View;
 use Illuminate\Pagination\Environment;
 use GrahamCampbell\Binput\Facades\Binput;
+use GrahamCampbell\Viewer\Facades\Viewer;
 use GrahamCampbell\CMSLogViewer\Classes\LogViewer;
-use GrahamCampbell\CMSCore\Controllers\BaseController;
+use GrahamCampbell\CMSCore\Controllers\AbstractController;
 
 /**
  * This is the logviewer controller class.
  *
  * @package    CMS-LogViewer
  * @author     Graham Campbell
- * @copyright  Copyright (C) 2013  Graham Campbell
- * @license    https://github.com/GrahamCampbell/CMS-LogViewer/blob/develop/LICENSE.md
+ * @copyright  Copyright (C) 2013-2014  Graham Campbell
+ * @license    https://github.com/GrahamCampbell/CMS-LogViewer/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/CMS-LogViewer
  */
-class LogViewerController extends BaseController
+class LogViewerController extends AbstractController
 {
     /**
      * Constructor (setup access permissions).
@@ -135,7 +137,7 @@ class LogViewerController extends BaseController
             'path'       => $path
         );
 
-        return $this->viewMake('cms-logviewer::show', $data, true);
+        return Viewer::make('cms-logviewer::show', $data, 'admin');
     }
 
     /**
@@ -169,6 +171,6 @@ class LogViewerController extends BaseController
             'empty'      => $logviewer->isEmpty()
         );
 
-        return $this->viewMake('cms-logviewer::data', $data, true);
+        return View::make('cms-logviewer::data', $data);
     }
 }
