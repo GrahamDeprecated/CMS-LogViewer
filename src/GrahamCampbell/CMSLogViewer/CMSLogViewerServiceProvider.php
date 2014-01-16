@@ -24,7 +24,7 @@ use Illuminate\Support\ServiceProvider;
  * @package    CMS-LogViewer
  * @author     Graham Campbell
  * @copyright  Copyright (C) 2013-2014  Graham Campbell
- * @license    https://github.com/GrahamCampbell/CMS-LogViewer/blob/develop/LICENSE.md
+ * @license    https://github.com/GrahamCampbell/CMS-LogViewer/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/CMS-LogViewer
  */
 class CMSLogViewerServiceProvider extends ServiceProvider
