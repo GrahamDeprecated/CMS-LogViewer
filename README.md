@@ -25,7 +25,7 @@ CMS LogViewer is a [CMS Core](https://github.com/GrahamCampbell/CMS-Core) plugin
 * CMS LogViewer uses [Travis CI](https://travis-ci.org/GrahamCampbell/CMS-LogViewer) to run tests to check if it's working as it should.  
 * CMS LogViewer uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-LogViewer) and [Coveralls](https://coveralls.io/r/GrahamCampbell/CMS-LogViewer) to run additional tests and checks.  
 * CMS LogViewer uses [Composer](https://getcomposer.org) to load and manage dependencies.  
-* CMS LogViewer provides a [change log](https://github.com/GrahamCampbell/CMS-LogViewer/blob/develop/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/CMS-LogViewer/releases), and a [wiki](https://github.com/GrahamCampbell/CMS-LogViewer/wiki).  
+* CMS LogViewer provides a [change log](https://github.com/GrahamCampbell/CMS-LogViewer/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/CMS-LogViewer/releases), and a [wiki](https://github.com/GrahamCampbell/CMS-LogViewer/wiki).  
 * CMS LogViewer is licensed under the GNU AGPLv3, available [here](https://github.com/GrahamCampbell/CMS-LogViewer/blob/master/LICENSE.md).  
 
 
@@ -96,7 +96,7 @@ Once it is set up, run `git mergetool`. Once all conflicts are fixed, run `git r
 
 ## Pull Requests
 
-Please submit pull requests against the develop branch.  
+Please review these guidelines before submitting any pull requests.  
 
 * Bug fixes shouldn't be sent to the master branch unless they fix features that exist only in the upcoming release.  
 * Before sending a pull request for a new feature, you should first create an issue with [Proposal] in the title.  
