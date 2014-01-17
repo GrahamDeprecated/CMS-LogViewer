@@ -6,8 +6,8 @@ CMS LogViewer
 [![Build Status](https://travis-ci.org/GrahamCampbell/CMS-LogViewer.png)](https://travis-ci.org/GrahamCampbell/CMS-LogViewer)
 [![Coverage Status](https://coveralls.io/repos/GrahamCampbell/CMS-LogViewer/badge.png)](https://coveralls.io/r/GrahamCampbell/CMS-LogViewer)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-LogViewer/badges/quality-score.png?s=30a629f55a95e3e0b0d146b242d0e80662abb298)](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-LogViewer)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/7c3d818f-dbcf-4e27-9ff4-b0c2a1fe69bd/mini.png)](https://insight.sensiolabs.com/projects/7c3d818f-dbcf-4e27-9ff4-b0c2a1fe69bd)
 [![Latest Version](https://poser.pugx.org/graham-campbell/cms-logviewer/v/stable.png)](https://packagist.org/packages/graham-campbell/cms-logviewer)
-[![Still Maintained](http://stillmaintained.com/GrahamCampbell/CMS-LogViewer.png)](http://stillmaintained.com/GrahamCampbell/CMS-LogViewer)
 
 
 ## WARNING
@@ -25,7 +25,7 @@ CMS LogViewer is a [CMS Core](https://github.com/GrahamCampbell/CMS-Core) plugin
 * CMS LogViewer uses [Travis CI](https://travis-ci.org/GrahamCampbell/CMS-LogViewer) to run tests to check if it's working as it should.  
 * CMS LogViewer uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-LogViewer) and [Coveralls](https://coveralls.io/r/GrahamCampbell/CMS-LogViewer) to run additional tests and checks.  
 * CMS LogViewer uses [Composer](https://getcomposer.org) to load and manage dependencies.  
-* CMS LogViewer provides a [change log](https://github.com/GrahamCampbell/CMS-LogViewer/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/CMS-LogViewer/releases), and a [wiki](https://github.com/GrahamCampbell/CMS-LogViewer/wiki).  
+* CMS LogViewer provides a [change log](https://github.com/GrahamCampbell/CMS-LogViewer/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/CMS-LogViewer/releases), and [api docs](http://grahamcampbell.github.io/CMS-LogViewer).  
 * CMS LogViewer is licensed under the GNU AGPLv3, available [here](https://github.com/GrahamCampbell/CMS-LogViewer/blob/master/LICENSE.md).  
 
 
@@ -98,7 +98,7 @@ Once it is set up, run `git mergetool`. Once all conflicts are fixed, run `git r
 
 Please review these guidelines before submitting any pull requests.  
 
-* Bug fixes shouldn't be sent to the master branch unless they fix features that exist only in the upcoming release.  
+* When submitting bug fixes, check if a maintenance branch exists for an older series, then pull against that older branch if the bug is present in it.  
 * Before sending a pull request for a new feature, you should first create an issue with [Proposal] in the title.  
 * Please follow the [PSR-2 Coding Style](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) and [PHP-FIG Naming Conventions](https://github.com/php-fig/fig-standards/blob/master/bylaws/002-psr-naming-conventions.md).  
 
