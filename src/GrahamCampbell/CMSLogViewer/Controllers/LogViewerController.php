@@ -156,13 +156,6 @@ class LogViewerController extends AbstractController
         $page = Paginator::make($log, count($log), Config::get('cms-logviewer::per_page', 20));
         $page->setBaseUrl(URL::route('logviewer.index').'/'.$path.'/'.$sapi.'/'.$date.'/'.$level);
 
-        $sapis = array(
-            'apache' => 'Apache',
-            'cgi-fcgi' => 'Fast CGI',
-            'fpm-fcgi' => 'Nginx',
-            'cli' => 'CLI'
-        );
-
         $data = array(
             'paginator'  => $page,
             'log'        => (count($log) > $page->getPerPage() ? array_slice($log, $page->getFrom()-1, $page->getPerPage()) : $log),

@@ -47,7 +47,7 @@ Route::filter('logviewer.logs', function () {
 });
 
 Route::filter('logviewer.messages', function () {
-    if (Session::has('success') OR Session::has('error') OR Session::has('info')) {
+    if (Session::has('success') || Session::has('error') || Session::has('info')) {
         View::share('has_messages', true);
     } else {
         View::share('has_messages', false);
