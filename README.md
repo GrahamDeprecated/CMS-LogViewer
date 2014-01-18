@@ -22,8 +22,8 @@ CMS LogViewer is a [CMS Core](https://github.com/GrahamCampbell/CMS-Core) plugin
 * CMS LogViewer was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).  
 * CMS LogViewer is heavily based on Mike Mand's [LogViewer](https://github.com/mikemand/logviewer).  
 * CMS LogViewer relies on my [CMS Core](https://github.com/GrahamCampbell/CMS-Core) package.  
-* CMS LogViewer uses [Travis CI](https://travis-ci.org/GrahamCampbell/CMS-LogViewer) to run tests to check if it's working as it should.  
-* CMS LogViewer uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-LogViewer) and [Coveralls](https://coveralls.io/r/GrahamCampbell/CMS-LogViewer) to run additional tests and checks.  
+* CMS LogViewer uses [Travis CI](https://travis-ci.org/GrahamCampbell/CMS-LogViewer) with [Coveralls](https://coveralls.io/r/GrahamCampbell/CMS-LogViewer) to check everything is working.  
+* CMS LogViewer uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-LogViewer) and [SensioLabsInsight](https://insight.sensiolabs.com/projects/7c3d818f-dbcf-4e27-9ff4-b0c2a1fe69bd) to run additional checks.  
 * CMS LogViewer uses [Composer](https://getcomposer.org) to load and manage dependencies.  
 * CMS LogViewer provides a [change log](https://github.com/GrahamCampbell/CMS-LogViewer/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/CMS-LogViewer/releases), and [api docs](http://grahamcampbell.github.io/CMS-LogViewer).  
 * CMS LogViewer is licensed under the GNU AGPLv3, available [here](https://github.com/GrahamCampbell/CMS-LogViewer/blob/master/LICENSE.md).  
