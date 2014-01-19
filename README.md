@@ -7,6 +7,7 @@ CMS LogViewer
 [![Coverage Status](https://coveralls.io/repos/GrahamCampbell/CMS-LogViewer/badge.png)](https://coveralls.io/r/GrahamCampbell/CMS-LogViewer)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-LogViewer/badges/quality-score.png?s=30a629f55a95e3e0b0d146b242d0e80662abb298)](https://scrutinizer-ci.com/g/GrahamCampbell/CMS-LogViewer)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/7c3d818f-dbcf-4e27-9ff4-b0c2a1fe69bd/mini.png)](https://insight.sensiolabs.com/projects/7c3d818f-dbcf-4e27-9ff4-b0c2a1fe69bd)
+[![Software License](https://poser.pugx.org/graham-campbell/cms-logviewer/license.png)](https://github.com/GrahamCampbell/CMS-LogViewer/blob/master/LICENSE.md)
 [![Latest Version](https://poser.pugx.org/graham-campbell/cms-logviewer/v/stable.png)](https://packagist.org/packages/graham-campbell/cms-logviewer)
 
 
