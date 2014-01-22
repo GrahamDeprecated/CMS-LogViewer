@@ -16,9 +16,9 @@
 
 namespace GrahamCampbell\CMSLogViewer\Subscribers;
 
-use Cartalyst\Sentry\Facades\Laravel\Sentry;
 use GrahamCampbell\CMSCore\Facades\PageProvider;
 use GrahamCampbell\Navigation\Facades\Navigation;
+use GrahamCampbell\Credentials\Facades\Credentials;
 
 /**
  * This is the navigation subscriber class.
@@ -53,7 +53,7 @@ class NavigationSubscriber
     public function onNavigationMain($event)
     {
         if (PageProvider::getNavUser()) {
-            if (Sentry::getUser()->hasAccess('admin')) {
+            if (Credentials::hasAccess('admin')) {
                 // add the logviewer link
                 Navigation::addMain(array('title' => 'Logs', 'slug' => 'logviewer', 'icon' => 'wrench'), 'admin');
             }
@@ -69,7 +69,7 @@ class NavigationSubscriber
     public function onNavigationBar($event)
     {
         if (PageProvider::getNavUser()) {
-            if (Sentry::getUser()->hasAccess('admin')) {
+            if (Credentials::hasAccess('admin')) {
                 // add the logviewer link
                 Navigation::addBar(array('title' => 'View Logs', 'slug' => 'logviewer', 'icon' => 'wrench'));
             }
