@@ -16,7 +16,6 @@
 
 namespace GrahamCampbell\CMSLogViewer\Subscribers;
 
-use GrahamCampbell\CMSCore\Facades\PageProvider;
 use GrahamCampbell\Navigation\Facades\Navigation;
 use GrahamCampbell\Credentials\Facades\Credentials;
 
@@ -52,7 +51,7 @@ class NavigationSubscriber
      */
     public function onNavigationMain($event)
     {
-        if (PageProvider::getNavUser()) {
+        if (Credentials::check()) {
             if (Credentials::hasAccess('admin')) {
                 // add the logviewer link
                 Navigation::addMain(array('title' => 'Logs', 'slug' => 'logviewer', 'icon' => 'wrench'), 'admin');
@@ -68,7 +67,7 @@ class NavigationSubscriber
      */
     public function onNavigationBar($event)
     {
-        if (PageProvider::getNavUser()) {
+        if (Credentials::check()) {
             if (Credentials::hasAccess('admin')) {
                 // add the logviewer link
                 Navigation::addBar(array('title' => 'View Logs', 'slug' => 'logviewer', 'icon' => 'wrench'));
