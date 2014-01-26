@@ -52,6 +52,8 @@ class LogViewerController extends AbstractController
             'getShow'   => 'admin'
         ));
 
+        $this->beforeFilter('ajax', array('only' => array('getData')));
+
         parent::__construct();
     }
 
@@ -145,8 +147,6 @@ class LogViewerController extends AbstractController
      */
     public function getData($path, $sapi, $date, $level = null)
     {
-        $this->checkAjax();
-
         if (is_null($level) || !is_string($level)) {
             $level = 'all';
         }
