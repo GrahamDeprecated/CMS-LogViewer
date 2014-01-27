@@ -59,7 +59,21 @@ class CMSLogViewerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->registerLogViewerController();
+    }
+
+    /**
+     * Register the logviewer controller class.
+     *
+     * @return void
+     */
+    protected function registerLogViewerController()
+    {
+        $this->app->bind('GrahamCampbell\CMSLogViewer\Controllers\LogViewerController', function ($app) {
+            $credentials = $app['credentials'];
+
+            return new Controllers\LogViewerController($credentials);
+        });
     }
 
     /**
