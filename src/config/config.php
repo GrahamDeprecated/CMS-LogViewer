@@ -34,7 +34,7 @@ return array(
     | Logs Per Page
     |--------------------------------------------------------------------------
     |
-    | This defines how many log entries are displayed derp page.
+    | This defines how many log entries are displayed per page.
     |
     | Default to 20.
     |
