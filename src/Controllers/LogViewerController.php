@@ -74,7 +74,7 @@ class LogViewerController extends AbstractController
 
         $today = Carbon::today()->format('Y-m-d');
 
-        $dirs = Config::get('cms-logviewer::log_dirs');
+        $dirs = Config::get('graham-campbell/cms-logviewer::log_dirs');
         reset($dirs);
         $path = key($dirs);
 
@@ -139,7 +139,7 @@ class LogViewerController extends AbstractController
             'path'       => $path
         );
 
-        return Viewer::make('cms-logviewer::show', $data, 'admin');
+        return Viewer::make('graham-campbell/cms-logviewer::show', $data, 'admin');
     }
 
     /**
@@ -155,7 +155,7 @@ class LogViewerController extends AbstractController
 
         $logviewer = new LogViewer($path, $sapi, $date, $level);
         $log = $logviewer->log();
-        $page = Paginator::make($log, count($log), Config::get('cms-logviewer::per_page', 20));
+        $page = Paginator::make($log, count($log), Config::get('graham-campbell/cms-logviewer::per_page', 20));
         $page->setBaseUrl(URL::route('logviewer.index').'/'.$path.'/'.$sapi.'/'.$date.'/'.$level);
 
         $data = array(
@@ -164,6 +164,6 @@ class LogViewerController extends AbstractController
             'empty'      => $logviewer->isEmpty()
         );
 
-        return View::make('cms-logviewer::data', $data);
+        return View::make('graham-campbell/cms-logviewer::data', $data);
     }
 }

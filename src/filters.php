@@ -25,7 +25,7 @@ Route::filter('logviewer.logs', function () {
 
     foreach ($sapis as $sapi => $human) {
         $logs[$sapi]['sapi'] = $human;
-        $dirs = Config::get('cms-logviewer::log_dirs');
+        $dirs = Config::get('graham-campbell/cms-logviewer::log_dirs');
         $files = array();
 
         foreach ($dirs as $app => $dir) {

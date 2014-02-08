@@ -45,9 +45,9 @@
         "graham-campbell/testbench": "0.2.*"
     },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "GrahamCampbell\\CMSLogViewer\\": "src/",
-            "GrahamCampbell\\Tests\\CMSLogViewer": "tests/"
+            "GrahamCampbell\\Tests\\CMSLogViewer\\": "tests/"
         }
     },
     "extra": {

@@ -43,7 +43,7 @@ class CMSLogViewerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('graham-campbell/cms-logviewer');
+        $this->package('graham-campbell/cms-logviewer', 'graham-campbell/cms-logviewer', __DIR__);
 
         include __DIR__.'/../../routes.php';
         include __DIR__.'/../../filters.php';
