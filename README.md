@@ -13,7 +13,7 @@ CMS LogViewer
 
 ## WARNING
 
-#### This package will depreciated soon. The final release will be V0.2 Alpha. It has been replaced by my [Laravel LogViewer](https://github.com/GrahamCampbell/Laravel-LogViewer) package. This package new package will be compatible with all Laravel applications and will include native support for [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-CMS). Note that [CMS Core](https://github.com/GrahamCampbell/CMS-Core) will also be deprecated.
+#### This package has been [replaced](https://github.com/GrahamCampbell/Laravel-LogViewer), and is no longer maintained.
 
 
 ## What Is CMS LogViewer?
@@ -52,7 +52,6 @@ You will need to register many service providers before you attempt to load the 
 * `'GrahamCampbell\Queuing\QueuingServiceProvider'`
 * `'GrahamCampbell\HTMLMin\HTMLMinServiceProvider'`
 * `'GrahamCampbell\Markdown\MarkdownServiceProvider'`
-* `'GrahamCampbell\Flysystem\FlysystemServiceProvider'`
 * `'GrahamCampbell\Security\SecurityServiceProvider'`
 * `'GrahamCampbell\Binput\BinputServiceProvider'`
 * `'GrahamCampbell\Passwd\PasswdServiceProvider'`
