@@ -41,11 +41,7 @@ CMS LogViewer is a [CMS Core](https://github.com/GrahamCampbell/CMS-Core) plugin
 
 Please check the system requirements before installing CMS LogViewer.
 
-To get the latest version of CMS LogViewer, simply require it in your `composer.json` file.
-
-`"graham-campbell/cms-logviewer": "*"`
-
-You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+To get the latest version of CMS LogViewer, simply require `"graham-campbell/cms-logviewer": "0.2.*@alpha"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
 You will need to register many service providers before you attempt to load the CMS LogViewer service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 
