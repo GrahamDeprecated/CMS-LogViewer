@@ -45,11 +45,11 @@ class CMSLogViewerServiceProvider extends ServiceProvider
     {
         $this->package('graham-campbell/cms-logviewer', 'graham-campbell/cms-logviewer', __DIR__);
 
-        include __DIR__.'/../../routes.php';
-        include __DIR__.'/../../filters.php';
-        include __DIR__.'/../../macros.php';
-        include __DIR__.'/../../listeners.php';
-        include __DIR__.'/../../assets.php';
+        include __DIR__.'/routes.php';
+        include __DIR__.'/filters.php';
+        include __DIR__.'/macros.php';
+        include __DIR__.'/listeners.php';
+        include __DIR__.'/assets.php';
     }
 
     /**
